@@ -1,20 +1,22 @@
-const [Kano, background] = document.querySelectorAll('img[alt="kanotest]');
+const Kano = document.getElementById("kano");
+
+// kép arány: 75:138
 
 const position = {
-    x: GameViewport.WIDTH / 2 - Kano.width / 2,
-    y: 50,
+    x: 80,
+    y: 100,
 };
 
-let velocity = 1;
+let velocity = 3;
 
-function update(){
+export function updateKano(context){
     position.x += velocity;
-    if ( position.x > GameViewport.WIDTH - Kano.width || position.x < 0) {
+
+    if ( position.x > context.canvas.width - Kano.width || position.x < 0) {
      velocity = - velocity;
     }
-};
+}
 
-Function draw(){
+export function drawKano(context){
     context.drawImage(Kano, position.x, position.y);
-};
-part 3 6:13
+}

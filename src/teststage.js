@@ -1,2 +1,5 @@
-const [Kano, background] = document.querySelectorAll('img');
-context.drawImage(background, 0, 0)
+const background = document.getElementById("backg");
+
+export function drawBackground(context){
+        context.drawImage(background, 0, 0)
+    }

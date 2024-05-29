@@ -1,3 +1,4 @@
+import { updateJax } from './Jaxtest.js';
 import { drawKano, updateKano } from './Kanotest.js';
 import { drawBackground } from './teststage.js';
 
@@ -15,9 +16,13 @@ window.onload = function() {
     
     function frame() {
         updateKano(context);
+        updateJax(context);
 
         drawBackground(context);
         drawKano(context);
+        drawJax(context);
+
+        
 
         window.requestAnimationFrame(frame);
     }
